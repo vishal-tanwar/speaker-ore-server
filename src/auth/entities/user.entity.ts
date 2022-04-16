@@ -37,6 +37,9 @@ export class User extends BaseEntity {
     @Column({ enum: AuthProvider ,nullable: true })
     provider: string
 
+    @Column({ nullable: true })
+    logged_id: string
+
     @Column()
     created_at: Date
 

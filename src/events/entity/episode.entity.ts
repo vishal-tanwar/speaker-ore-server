@@ -55,6 +55,12 @@ export class Episode extends BaseEntity {
     @Column({ default: false })
     is_visible: boolean
 
+    @Column({ default: false })
+    approved: boolean
+
+    @Column({ nullable: true } )
+    declineReason: string
+
     @Column()
     submitted_on: Date
 
