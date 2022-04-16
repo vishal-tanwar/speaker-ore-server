@@ -112,8 +112,8 @@ export class AuthService {
             throw new ConflictException(e)
         }
     }
-    async findUser(id: string): Promise<{}> {
-        return  {id};
+    async findUser(id: string): Promise<User> {
+        return this.userRepository.findOne({ where: { id: id } } );
     }
     
     async findById( id: any ): Promise <User> {
