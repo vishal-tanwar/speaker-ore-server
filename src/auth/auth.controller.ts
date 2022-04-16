@@ -27,9 +27,9 @@ export class AuthController {
 
     @Get('/get-loogedin/:id')
     async getUser(
-        @Body() id: string
+        @Param('id') id: any
     ): Promise<{}> {
-        return this.authService.findUser(id)
+        return this.authService.findById( id );
     }
     
     @Get('get-user/:id')
