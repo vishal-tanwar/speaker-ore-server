@@ -116,7 +116,7 @@ export class AuthService {
         return this.userRepository.findOne( id );
     }
     
-    async findById( id ): Promise <{}> {
+    async findById( id: any ): Promise <{}> {
         return {id: id }
     }
 
