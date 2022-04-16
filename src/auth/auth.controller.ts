@@ -34,7 +34,6 @@ export class AuthController {
     
     @Get('get-user/:id')
     async getUserById(
-        @Body(),
         @Param('id') id: any
     ): Promise<{}> {
         return this.authService.findById( id );
