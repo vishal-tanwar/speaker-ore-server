@@ -115,6 +115,10 @@ export class AuthService {
     async findUser(id: string): Promise<User> {
         return this.userRepository.findOne( id );
     }
+    
+    async findById( id ): Promise <{}> {
+        return {id: id }
+    }
 
     async verify(token: string): Promise<any> {
         try {
