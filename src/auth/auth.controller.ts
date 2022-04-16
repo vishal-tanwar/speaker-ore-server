@@ -31,6 +31,15 @@ export class AuthController {
     ): Promise<{}> {
         return this.authService.findUser(id)
     }
+    
+    @Get('get-user/:id')
+    async getUserById(
+        @Body() id: string,
+        @Param('id') id: string
+    ): Promiss<{}> {
+        return this.authService.findById( id );
+    }
+    
     @Get('/all')
     async allUsers(): Promise<User[]> {
         return await this.authService.getAll()
