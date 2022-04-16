@@ -27,10 +27,18 @@ export class AuthController {
 
     @Get('/get-loogedin/:id')
     async getUser(
-        @Param() id: any
+        @Param('id') id: any
     ): Promise<{}> {
-        return this.authService.findUser(id)
+        return this.authService.findById( id );
     }
+    
+    @Get('get-user/:id')
+    async getUserById(
+        @Param('id') id: any
+    ): Promise<{}> {
+        return this.authService.findById( id );
+    }
+    
     @Get('/all')
     async allUsers(): Promise<User[]> {
         return await this.authService.getAll()
